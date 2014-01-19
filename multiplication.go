@@ -14,7 +14,7 @@ func (a T) Multiply(b T) T {
 
 
 
-func (a *T) MultiplyTo(b T) {
+func (a *T) MultiplyBy(b T) {
 
 	a.X *= b.X
 	a.Y *= b.Y
