@@ -2,6 +2,7 @@ package float64x4
 
 
 import "testing"
+import "math/rand"
 
 
 func TestNew(t *testing.T) {
@@ -82,6 +83,33 @@ func TestNew(t *testing.T) {
 	}
 }
 
+func TestNewRandomly(t *testing.T) {
+
+	for i:=0; i < 200; i++ {
+
+		x := rand.Float64()
+		y := rand.Float64()
+		z := rand.Float64()
+		w := rand.Float64()
+
+
+		vector := New(x, y, z, w)
+
+		if x != vector.X {
+			t.Errorf("Bad value for X. Expected %v, but instead got %v", x, vector.X)
+		}
+		if y != vector.Y {
+			t.Errorf("Bad value for Y. Expected %v, but instead got %v", y, vector.Y)
+		}
+		if z != vector.Z {
+			t.Errorf("Bad value for Z. Expected %v, but instead got %v", z, vector.Z)
+		}
+		if w != vector.W {
+			t.Errorf("Bad value for W. Expected %v, but instead got %v", w, vector.W)
+		}
+	}
+}
+
 
 func TestZero(t *testing.T) {
 
@@ -139,6 +167,30 @@ func TestSplat(t *testing.T) {
 		}
 		if datum.a != vector.W {
 			t.Errorf("Bad value for W. Expected %v, but instead got %v", datum.a, vector.W)
+		}
+	}
+}
+
+func TestSplatRandomly(t *testing.T) {
+
+	for i:=0; i < 200; i++ {
+
+		number := rand.Float64()
+
+
+		vector := Splat(number)
+
+		if number != vector.X {
+			t.Errorf("Bad value for X. Expected %v, but instead got %v", number, vector.X)
+		}
+		if number != vector.Y {
+			t.Errorf("Bad value for Y. Expected %v, but instead got %v", number, vector.Y)
+		}
+		if number != vector.Z {
+			t.Errorf("Bad value for Z. Expected %v, but instead got %v", number, vector.Z)
+		}
+		if number != vector.W {
+			t.Errorf("Bad value for W. Expected %v, but instead got %v", number, vector.W)
 		}
 	}
 }
