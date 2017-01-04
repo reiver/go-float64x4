@@ -1,10 +1,10 @@
 package float64x4
 
 // T represents the floating point approximation of ℝ⁴.
-// I.e., 4 float64.
 //
-// Note that these can be used these can be used for
-// affine transformation in ℝ³.
+// I.e., 4 float64s.
+//
+// Note that these can be used for affine transformation in ℝ³.
 type T [4]float64
 
 // X returns the 1st dimension.
