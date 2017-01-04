@@ -68,16 +68,16 @@ func TestNew(t *testing.T) {
 
 		vector := New(datum.x, datum.y, datum.z, datum.w)
 
-		if datum.x != vector.X {
+		if datum.x != vector.X() {
 			t.Errorf("Bad value for X. Expected %v, but instead got %v", datum.x, vector.X)
 		}
-		if datum.y != vector.Y {
+		if datum.y != vector.Y() {
 			t.Errorf("Bad value for Y. Expected %v, but instead got %v", datum.y, vector.Y)
 		}
-		if datum.z != vector.Z {
+		if datum.z != vector.Z() {
 			t.Errorf("Bad value for Z. Expected %v, but instead got %v", datum.z, vector.Z)
 		}
-		if datum.w != vector.W {
+		if datum.w != vector.W() {
 			t.Errorf("Bad value for W. Expected %v, but instead got %v", datum.w, vector.W)
 		}
 	}
@@ -95,16 +95,16 @@ func TestNewRandomly(t *testing.T) {
 
 		vector := New(x, y, z, w)
 
-		if x != vector.X {
+		if x != vector.X() {
 			t.Errorf("Bad value for X. Expected %v, but instead got %v", x, vector.X)
 		}
-		if y != vector.Y {
+		if y != vector.Y() {
 			t.Errorf("Bad value for Y. Expected %v, but instead got %v", y, vector.Y)
 		}
-		if z != vector.Z {
+		if z != vector.Z() {
 			t.Errorf("Bad value for Z. Expected %v, but instead got %v", z, vector.Z)
 		}
-		if w != vector.W {
+		if w != vector.W() {
 			t.Errorf("Bad value for W. Expected %v, but instead got %v", w, vector.W)
 		}
 	}
@@ -115,16 +115,16 @@ func TestZero(t *testing.T) {
 
 	vector := Zero()
 
-	if 0.0 != vector.X {
+	if 0.0 != vector.X() {
 		t.Errorf("Bad value for X. Expected %v, but instead got %v", 0.0, vector.X)
 	}
-	if 0.0 != vector.Y {
+	if 0.0 != vector.Y() {
 		t.Errorf("Bad value for Y. Expected %v, but instead got %v", 0.0, vector.Y)
 	}
-	if 0.0 != vector.Z {
+	if 0.0 != vector.Z() {
 		t.Errorf("Bad value for Z. Expected %v, but instead got %v", 0.0, vector.Z)
 	}
-	if 0.0 != vector.W {
+	if 0.0 != vector.W() {
 		t.Errorf("Bad value for W. Expected %v, but instead got %v", 0.0, vector.W)
 	}
 
@@ -156,16 +156,16 @@ func TestSplat(t *testing.T) {
 
 		vector := Splat(datum.a)
 
-		if datum.a != vector.X {
+		if datum.a != vector.X() {
 			t.Errorf("Bad value for X. Expected %v, but instead got %v", datum.a, vector.X)
 		}
-		if datum.a != vector.Y {
+		if datum.a != vector.Y() {
 			t.Errorf("Bad value for Y. Expected %v, but instead got %v", datum.a, vector.Y)
 		}
-		if datum.a != vector.Z {
+		if datum.a != vector.Z() {
 			t.Errorf("Bad value for Z. Expected %v, but instead got %v", datum.a, vector.Z)
 		}
-		if datum.a != vector.W {
+		if datum.a != vector.W() {
 			t.Errorf("Bad value for W. Expected %v, but instead got %v", datum.a, vector.W)
 		}
 	}
@@ -180,16 +180,16 @@ func TestSplatRandomly(t *testing.T) {
 
 		vector := Splat(number)
 
-		if number != vector.X {
+		if number != vector.X() {
 			t.Errorf("Bad value for X. Expected %v, but instead got %v", number, vector.X)
 		}
-		if number != vector.Y {
+		if number != vector.Y() {
 			t.Errorf("Bad value for Y. Expected %v, but instead got %v", number, vector.Y)
 		}
-		if number != vector.Z {
+		if number != vector.Z() {
 			t.Errorf("Bad value for Z. Expected %v, but instead got %v", number, vector.Z)
 		}
-		if number != vector.W {
+		if number != vector.W() {
 			t.Errorf("Bad value for W. Expected %v, but instead got %v", number, vector.W)
 		}
 	}

@@ -337,16 +337,16 @@ func TestAdd(t *testing.T) {
 
 		c := a.Add(b)
 
-        if datum.cx != c.X {
+        if datum.cx != c.X() {
             t.Errorf("Bad value for X. Expected %v, but instead got %v", datum.cx, c.X)
         }
-        if datum.cy != c.Y {
+        if datum.cy != c.Y() {
             t.Errorf("Bad value for Y. Expected %v, but instead got %v", datum.cy, c.Y)
         }
-        if datum.cz != c.Z {
+        if datum.cz != c.Z() {
             t.Errorf("Bad value for Z. Expected %v, but instead got %v", datum.cz, c.Z)
         }
-        if datum.cw != c.W {
+        if datum.cw != c.W() {
             t.Errorf("Bad value for W. Expected %v, but instead got %v", datum.cw, c.W)
         }
 	}
@@ -687,16 +687,16 @@ func TestAddTo(t *testing.T) {
 
 		a.AddTo(b)
 
-        if datum.cx != a.X {
+        if datum.cx != a.X() {
             t.Errorf("Bad value for X. Expected %v, but instead got %v", datum.cx, a.X)
         }
-        if datum.cy != a.Y {
+        if datum.cy != a.Y() {
             t.Errorf("Bad value for Y. Expected %v, but instead got %v", datum.cy, a.Y)
         }
-        if datum.cz != a.Z {
+        if datum.cz != a.Z() {
             t.Errorf("Bad value for Z. Expected %v, but instead got %v", datum.cz, a.Z)
         }
-        if datum.cw != a.W {
+        if datum.cw != a.W() {
             t.Errorf("Bad value for W. Expected %v, but instead got %v", datum.cw, a.W)
         }
 	}
